@@ -6,7 +6,8 @@
 import os
 import whisper
 import zhconv
-from .util import text2pinyin, wav2array
+from .util import text2pinyin, wav2array, load_audio,save_audio
+from .demucs import Demucs
 
 class Wav2text:
     

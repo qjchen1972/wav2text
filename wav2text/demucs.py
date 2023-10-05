@@ -13,9 +13,7 @@ class Demucs:
     def __init__(self, name='htdemucs', device='cpu'):
         strpath='./models/demucs'
         strpath = os.path.join(os.path.dirname(__file__), strpath)
-        if not os.path.exists(strpath):
-            os.mkdir(strpath)
-        self.model = get_model(name=name,) # repo=Path(strpath))
+        self.model = get_model(name=name, repo=Path(strpath))
         if device is None:
             device = "cuda" if torch.cuda.is_available() else "cpu"
         self.device = device
